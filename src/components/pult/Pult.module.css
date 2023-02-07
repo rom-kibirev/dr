@@ -1,0 +1,38 @@
+.pult {
+    @apply fixed z-10 w-72 h-screen bg-gradient-to-b from-deepBlue to-darkBlue text-white rounded-r-md shadow-md shadow-black overflow-hidden
+    transition-all duration-500
+}
+.collapse-nav {
+    @apply py-6 flex justify-end
+    transition-all duration-500
+}
+.collapse-nav span {
+    @apply cursor-pointer h-8 block
+}
+.collapse-nav svg {
+    @apply w-8 h-8 absolute right-4
+}
+.pult-collapse {
+    @apply opacity-100
+    transition-all duration-500
+}
+.pult-expand {
+    @apply opacity-0
+    transition-all duration-500
+}
+
+.pult-collapsed {
+    @apply fixed z-10 w-10 md:w-12 xl:w-16 h-screen bg-gradient-to-b from-deepBlue to-darkBlue text-white rounded-r-md shadow-md shadow-black overflow-hidden
+    transition-all duration-500
+}
+.pult-collapsed svg {
+    @apply right-1.5 md:right-2 xl:right-4
+}
+.pult-collapsed .pult-collapse {
+    @apply opacity-0
+    transition-all duration-500
+}
+.pult-collapsed .pult-expand {
+    @apply opacity-100
+    transition-all duration-500
+}
