@@ -1,24 +1,35 @@
 // import React, { useEffect } from 'react';
 import React from 'react';
-import styles from './User.modules.css';
+import styles from './User.module.css';
+import UserSelect from './UserSelect';
 import currentUser from '../DataFromBD/current-user';
 
 const User = (props) => {
 
-    // console.log('\n currentUser', currentUser.companies);
-    
-    console.log('\n ', styles);
+    const userList = [
+        {
+            name: 'Компания',
+            valueData: currentUser.company_id,
+            optionsData: currentUser.companies,
+        },
+        {
+            name: 'Проект',
+            valueData: currentUser.project_id,
+            optionsData: currentUser.projects,
+        },
+        {
+            name: 'Сотрудник',
+            valueData: currentUser.group_id,
+            optionsData: currentUser.groups,
+        },
+    ];
 
     return (
-        <nav className={styles['User-navigation']}>
+        <nav className={styles['navigation']}>
             <form>
                 <input type="submit" />
             </form>
-            <select className="px-5">
-                {currentUser.companies.map((company) => (
-                    <option value={company.id} key={company.id}>{company.name}</option>
-                ))}
-            </select>
+            {userList.map((option) => <UserSelect key={option.name} title={option.name} currentValue={option.valueData} list={option.optionsData}/>)}
         </nav>
     );
 }

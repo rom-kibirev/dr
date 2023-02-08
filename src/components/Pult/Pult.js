@@ -6,7 +6,7 @@ import User from "./User";
 const Pult = (props) => {
 
     const [collapseNavClass,setCollapseNavClass] = useState(`${localStorage.getItem('navState')}`);
-    if (localStorage.getItem('navState') === null) localStorage.setItem("navState","Pult");
+    if (localStorage.getItem('navState') === null) localStorage.setItem("navState","slider");
 
     return <div className={styles[collapseNavClass]}>
         <Burger collapseNavState={setCollapseNavClass}/>

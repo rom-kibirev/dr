@@ -1,0 +1,15 @@
+.item-title {
+    @apply px-5 text-lg mt-3
+}
+.item {
+    @apply px-7 flex flex-row mb-3
+}
+.item select {
+    @apply bg-softDarkBlue px-2 py-1 rounded-md w-full
+}
+.item svg {
+    @apply w-8 h-8 my-auto mr-2 stroke-white
+}
+.item img {
+    @apply w-8 h-8 my-auto mr-2 stroke-white text-white
+}

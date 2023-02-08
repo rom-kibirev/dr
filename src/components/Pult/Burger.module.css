@@ -1,0 +1,31 @@
+.collapse-nav {
+    @apply py-6 flex justify-end
+    transition-all duration-500
+}
+.collapse-nav span {
+    @apply cursor-pointer h-8 block
+}
+.collapse-nav svg {
+    @apply w-8 h-8 absolute right-4
+}
+.slider-collapse {
+    @apply opacity-100
+    transition-all duration-300
+}
+.slider-expand {
+    @apply opacity-0
+    transition-all duration-300
+}
+
+
+.collapsed svg {
+    @apply right-1.5 md:right-2 xl:right-4
+}
+.collapsed .slider-collapse {
+    @apply opacity-0
+    transition-all duration-300
+}
+.collapsed .slider-expand {
+    @apply opacity-100
+    transition-all duration-300
+}

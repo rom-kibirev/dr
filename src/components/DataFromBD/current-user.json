@@ -1,8 +1,8 @@
 {
   "id": 12,
   "name": "Фамилия И.О.",
-  "company_id":121,
-  "project_id":34,
+  "company_id":122,
+  "project_id":35,
   "group_id":4,
   "email":"coordinatoe@company.com",
   "email_verified_at":"2022-07-20T12:29:46.000000Z",
@@ -11,34 +11,29 @@
     {
       "id":34,
       "company_id":121,
-      "name":"ЖК Первый",
-      "selected": false
+      "name":"ЖК Первый"
     },
     {
       "id":35,
       "company_id":121,
-      "name":"ЖК Второй",
-      "selected": false
+      "name":"ЖК Второй"
     },
     {
       "id":36,
       "company_id":121,
-      "name":"ЖК Третий",
-      "selected": true
+      "name":"ЖК Третий"
     }
   ],
   "groups":[
     {
       "id":2,
       "name":"Инвестор",
-      "current": false,
-      "selected": false
+      "current": false
     },
     {
       "id":4,
       "name":"Координатор",
-      "current": true,
-      "selected": true
+      "current": true
     }
   ],
   "companies":[
@@ -58,8 +53,7 @@
       "bik":"76589",
       "phone":"+7(911)036-63-32",
       "director":"Деревленко Виталий Валентинович",
-      "authority":"Собственник",
-      "selected": false
+      "authority":"Собственник"
     },
     {
       "id":122,
@@ -69,8 +63,7 @@
       "inn":"7806407789",
       "phone":"+7(911)036-63-32",
       "director":"Деревленко Виталий Валентинович",
-      "authority":"Собственник",
-      "selected": true
+      "authority":"Собственник"
     }
   ]
 }
