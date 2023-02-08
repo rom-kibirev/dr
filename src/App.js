@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Pult from './components/pult/Pult';
+import Pult from './components/Pult/Pult';
 
 function App() {
   return (

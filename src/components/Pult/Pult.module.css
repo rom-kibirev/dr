@@ -1,4 +1,4 @@
-.pult {
+.Pult {
     @apply fixed z-10 w-72 h-screen bg-gradient-to-b from-deepBlue to-darkBlue text-white rounded-r-md shadow-md shadow-black overflow-hidden
     transition-all duration-500
 }
@@ -12,27 +12,27 @@
 .collapse-nav svg {
     @apply w-8 h-8 absolute right-4
 }
-.pult-collapse {
+.Pult-collapse {
     @apply opacity-100
     transition-all duration-500
 }
-.pult-expand {
+.Pult-expand {
     @apply opacity-0
     transition-all duration-500
 }
 
-.pult-collapsed {
+.Pult-collapsed {
     @apply fixed z-10 w-10 md:w-12 xl:w-16 h-screen bg-gradient-to-b from-deepBlue to-darkBlue text-white rounded-r-md shadow-md shadow-black overflow-hidden
     transition-all duration-500
 }
-.pult-collapsed svg {
+.Pult-collapsed svg {
     @apply right-1.5 md:right-2 xl:right-4
 }
-.pult-collapsed .pult-collapse {
+.Pult-collapsed .Pult-collapse {
     @apply opacity-0
     transition-all duration-500
 }
-.pult-collapsed .pult-expand {
+.Pult-collapsed .Pult-expand {
     @apply opacity-100
     transition-all duration-500
 }
