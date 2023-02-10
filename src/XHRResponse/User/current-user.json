@@ -1,6 +1,6 @@
 {
   "id": 12,
-  "name": "Фамилия И.О.",
+  "name": "Деревленко В. В.",
   "company_id":122,
   "project_id":35,
   "group_id":4,
@@ -20,20 +20,25 @@
     },
     {
       "id":36,
-      "company_id":121,
+      "company_id":122,
       "name":"ЖК Третий"
     }
   ],
   "groups":[
     {
       "id":2,
-      "name":"Инвестор",
-      "current": false
+      "company_id":122,
+      "name":"Инвестор"
     },
     {
       "id":4,
-      "name":"Координатор",
-      "current": true
+      "company_id":121,
+      "name":"Координатор"
+    },
+    {
+      "id":5,
+      "company_id":121,
+      "name":"Начальник участка"
     }
   ],
   "companies":[

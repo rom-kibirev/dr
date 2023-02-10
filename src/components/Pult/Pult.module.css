@@ -1,9 +1,9 @@
-.slider {
-    @apply fixed z-10 w-72 h-screen bg-gradient-to-b from-deepBlue to-darkBlue text-white rounded-r-md shadow-md shadow-black overflow-hidden
+.expanded {
+    @apply left-0 fixed z-10 w-72 h-screen bg-gradient-to-b from-deepBlue to-darkBlue text-white rounded-r-md shadow-md shadow-black overflow-hidden
     transition-all duration-500
 }
 
 .collapsed {
-    @apply fixed z-10 w-10 md:w-12 xl:w-16 h-screen bg-gradient-to-b from-deepBlue to-darkBlue text-white rounded-r-md shadow-md shadow-black overflow-hidden
+    @apply -left-56
     transition-all duration-500
 }

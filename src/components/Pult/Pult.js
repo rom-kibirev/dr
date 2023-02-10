@@ -1,18 +1,27 @@
 import styles from './Pult.module.css';
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Burger from "./Burger";
 import User from "./User";
 
 const Pult = (props) => {
 
-    const [collapseNavClass,setCollapseNavClass] = useState(`${localStorage.getItem('navState')}`);
-    if (localStorage.getItem('navState') === null) localStorage.setItem("navState","slider");
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
-    return <div className={styles[collapseNavClass]}>
-        <Burger collapseNavState={setCollapseNavClass}/>
-        <User />
-        <div>ProjectControl</div>
-    </div>;
+    const changePultCollapseHandler = (state) => {
+        if (state) setIsCollapsed(true);
+        else setIsCollapsed(false);
+    };
+
+    return (
+        <React.Fragment>
+            {console.log('\n ', isCollapsed)}
+            <div className={`${styles.expanded} ${(isCollapsed) ? styles.collapsed : ""}`}>
+                <Burger collapseNavState={changePultCollapseHandler}/>
+                <User />
+                <div>ProjectControl</div>
+            </div>
+        </React.Fragment>
+    );
 }
 
 export default Pult;
