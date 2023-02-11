@@ -16,7 +16,7 @@ const Pult = (props) => {
         <React.Fragment>
             <div className={`${styles.expanded} ${(isCollapsed) ? styles.collapsed : ""}`}>
                 <Burger collapseNavState={changePultCollapseHandler}/>
-                <User />
+                <User/>
                 <div>ProjectControl</div>
             </div>
         </React.Fragment>

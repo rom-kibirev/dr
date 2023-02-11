@@ -1,3 +1,15 @@
 .navigation {
-    @apply border-b border-softDarkBlue py-5
+    @apply border-b border-softDarkBlue
+}
+.current-user {
+    @apply grid grid-cols-2 px-3 mb-5
+}
+.current-user label {
+    @apply my-auto
+}
+.current-user button {
+    @apply w-10 h-10 my-auto place-self-end
+}
+.current-user svg {
+    @apply fill-white
 }
