@@ -1,8 +1,8 @@
 .item-title {
-    @apply px-5 text-lg mt-3
+    @apply px-3 text-lg mt-3
 }
 .item {
-    @apply px-7 flex flex-row mb-3
+    @apply px-3 flex flex-row mb-3
 }
 .item select {
     @apply bg-softDarkBlue px-2 py-1 rounded-md w-full

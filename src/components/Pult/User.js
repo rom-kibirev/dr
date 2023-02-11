@@ -1,70 +1,69 @@
-// import React, { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './User.module.css';
 import UserSelect from './UserSelect';
-// import currentUser from '../DataFromBD/current-user';
 
 const User = (props) => {
 
-    // const [error, setError] = useState(null);
-    // const [isLoaded, setIsLoaded] = useState(false);
-    // const [items, setItems] = useState([]);
+    const [items, setItems] = useState([]);
+    const [userInfo, setUserInfo] = useState([]);
 
-    // useEffect(() => {
-    //     fetch("./DataFromDB/User/current-user.json")
-    //         .then(res => res.json())
-    //         .then(
-    //             (result) => {
-    //                 setIsLoaded(true);
-    //                 setItems({
-    //                     list: [
-    {/*                        {*/}
-    //                             name: 'Компания',
-    //                             valueData: result.company_id,
-    //                             optionsData: result.companies,
-    //                         },
-    {/*                        {*/}
-    {/*                            name: 'Проект',*/}
-    //                             valueData: result.project_id,
-    //                             optionsData: result.projects.filter(list => list.company_id === result.company_id),
-    //                         },
-    //                         {
-    //                             name: 'Сотрудник',
-    //                             valueData: result.group_id,
-    //                             optionsData: result.groups.filter(list => list.company_id === result.company_id),
-    //                         },
-    //                     ]
-    //                 });
-    //             },
-    //             (error) => {
-    //                 setIsLoaded(true);
-    //                 setError(error);
-    //             }
-    //         )
-    // }, []);
+    useEffect(() => {
+        fetch('../XHRResponse/User/current-user.json')
+            .then(response => {return response.json();}).then(data => {
+            setItems([
+                {
+                    title: 'Компания',
+                    name: 'company',
+                    valueData: +data.company_id,
+                    optionsData: data.companies,
+                },
+                {
+                    title: 'Проект',
+                    name: 'project',
+                    valueData: +data.project_id,
+                    optionsData: data.projects.filter(list => list.company_id === +data.company_id),
+                },
+                {
+                    title: 'Сотрудник',
+                    name: 'group',
+                    valueData: +data.group_id,
+                    optionsData: data.groups.filter(list => list.company_id === +data.company_id),
+                },
+            ]);
+            setUserInfo(data)
+        }).catch((e: Error) => {console.log(e.message);});
+    },[]);
 
-    // if (error) {
-    //     return <div>Error: {error.message}</div>;
-    // } else if (!isLoaded) {
-    //     return <div>Loading...</div>;
-    // } else {
-    //     return (
-    //         <nav className={styles['navigation']}>
-    //             <form>
-    //                 <input type="submit" />
-    //             </form>
-    //             {items.list.map((option) => <UserSelect key={option.name} title={option.name} currentValue={option.valueData} list={option.optionsData}/>)}
-    //         </nav>
-    //     );
-    // }
+    const userSelectHandler = (event) => {
+        event.preventDefault();
+
+        let saveData = userInfo;
+
+        saveData.company_id = event.target.parentNode.parentNode.querySelector('[name="company"]').value;
+        saveData.project_id = event.target.parentNode.parentNode.querySelector('[name="project"]').value;
+        saveData.group_id = event.target.parentNode.parentNode.querySelector('[name="group"]').value;
+
+        fetch('http://localhost:8000/save.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',},
+            body: new URLSearchParams({
+                'place': 'USER/current-user.json',
+                'data': JSON.stringify(saveData)
+            }),
+        }).then(data => {
+            if (data.ok) {console.log('\n data', data);}
+        });
+    }
 
     return (
-        <nav className={styles['navigation']}>
+        <div className={styles['navigation']}>
             <form>
                 <input type="submit" />
             </form>
-            {/*{items.list.map((option) => <UserSelect key={option.name} title={option.name} currentValue={option.valueData} list={option.optionsData}/>)}*/}
-        </nav>
+            <form onChange={userSelectHandler} >
+                {items.map((option) => <UserSelect key={option.name} title={option.title} name={option.name} currentValue={option.valueData} list={option.optionsData} userInfo={userInfo}/>)}
+            </form>
+        </div>
     );
 }
 

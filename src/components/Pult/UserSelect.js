@@ -8,18 +8,18 @@ const UserSelect = (props) => {
 
     let icon;
 
-    if (props.title === 'Компания') icon = <IconCompany />;
-    else if (props.title === 'Проект') icon = <IconProject />;
-    else if (props.title === 'Сотрудник') icon = <IconEmployee />;
+    if (props.name === 'company') icon = <IconCompany />;
+    else if (props.name === 'project') icon = <IconProject />;
+    else if (props.name === 'group') icon = <IconEmployee />;
 
     return (
         <React.Fragment>
-            <div className={styles['item-title']}>{props.title}</div>
+            <label className={styles['item-title']}>{props.title}</label>
             <div className={styles['item']}>
                 {icon}
-                <select defaultValue={props.currentValue}>
-                    {props.list.map((company) => (
-                        <option value={company.id} key={company.id}>{company.name}</option>
+                <select defaultValue={props.currentValue} name={props.name}>
+                    {props.list.map((item) => (
+                        <option value={item.id} key={item.id}>{item.name}</option>
                     ))}
                 </select>
             </div>
