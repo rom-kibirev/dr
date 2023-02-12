@@ -5,18 +5,17 @@ import User from "./User";
 
 const Pult = (props) => {
 
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(true);
 
     const changePultCollapseHandler = (state) => {
-        if (state) setIsCollapsed(true);
-        else setIsCollapsed(false);
+        setIsCollapsed(state);
     };
 
     return (
         <React.Fragment>
-            <div className={`${styles.expanded} ${(isCollapsed) ? styles.collapsed : ""}`}>
-                <Burger collapseNavState={changePultCollapseHandler}/>
-                <User/>
+            <div className={`${styles.expanded} ${(!isCollapsed) ? styles.collapsed : ""}`}>
+                <Burger collapseState={changePultCollapseHandler} state={isCollapsed}/>
+                <User />
                 <div>ProjectControl</div>
             </div>
         </React.Fragment>
