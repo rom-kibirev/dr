@@ -6,24 +6,34 @@ import {ReactComponent as IconEmployee} from "../Icons/Pult/employee.svg";
 
 const UserSelect = (props) => {
 
-    let icon;
+    const isCollapsed = props.isCollapsed;
+    
+    const changeUserSelect = (event) => {
 
-    if (props.name === 'company') icon = <IconCompany />;
-    else if (props.name === 'project') icon = <IconProject />;
-    else if (props.name === 'group') icon = <IconEmployee />;
+        const getValue = event.target.value;
+        const getName = event.target.name;
+
+        if (getName === 'company') props.getSelected({
+                "company_id": +getValue,
+                "project_id": props.userInfo.projects.filter(list => list.company_id === +getValue)[0].id,
+                "group_id": props.userInfo.groups.filter(list => list.company_id === +getValue)[0].id
+         });
+        else if (getName === 'project') props.getSelected({"project_id": +getValue});
+        else if (getName === 'group') props.getSelected({"group_id": +getValue});
+    }
 
     return (
-        <React.Fragment>
-            <label className={styles['item-title']}>{props.title}</label>
-            <div className={styles['item']}>
-                {icon}
-                <select defaultValue={props.currentValue} name={props.name}>
-                    {props.list.map((item) => (
-                        <option value={item.id} key={item.id}>{item.name}</option>
-                    ))}
-                </select>
-            </div>
-        </React.Fragment>
+        <div className={`${styles['user-select']} ${isCollapsed ? '' : styles['user-select-collapsed']}`}>
+            {props.type === 'company' ? <IconCompany /> : props.type === 'project' ? <IconProject /> : props.type === 'group' ? <IconEmployee /> : ''}
+            <label>{props.label}</label>
+            <select
+                defaultValue={props.currentValue}
+                name={props.type}
+                onChange={changeUserSelect}
+            >
+                {props.list.map((item) => (<option value={item.id} key={item.id}>{item.name}</option>))}
+            </select>
+        </div>
     );
 }
 export default UserSelect

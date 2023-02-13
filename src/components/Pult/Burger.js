@@ -10,6 +10,7 @@ const Burger = (props) => {
         props.collapseState(isOpen);
 
         const localCollapseState = localStorage.getItem('collapseState');
+
         if (localCollapseState === "1") setOpen(false);
         else setOpen(true);
     },[props,isOpen]);
@@ -22,7 +23,7 @@ const Burger = (props) => {
 
     return (
         <React.Fragment>
-            <div className={`${styles.expanded} ${isOpen ? styles.collapsed : ""}`} onClick={changeCollapseState}>
+            <div className={`${styles.expanded} ${!isOpen ? styles.collapsed : ""}`} onClick={changeCollapseState}>
                 <Hamburger size={26} toggled={isOpen} toggle={setOpen}/>
             </div>
         </React.Fragment>

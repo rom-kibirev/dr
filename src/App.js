@@ -5,7 +5,7 @@ import Pult from './components/Pult/Pult';
 function App() {
   return (
       <React.Fragment>
-        <Pult state="1" />
+        <Pult />
         <div className={"ml-16"}>section</div>
       </React.Fragment>
   );

@@ -1,8 +1,7 @@
 .expanded {
-    @apply py-6 pr-3 flex justify-end
+    @apply pt-6 pr-5 flex justify-end
     transition-all duration-500
 }
-.collapsed {
-    @apply pr-6
-    transition-all duration-500
+.collapsed{
+    @apply pt-2 pr-2.5
 }

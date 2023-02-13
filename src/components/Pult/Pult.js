@@ -7,15 +7,13 @@ const Pult = (props) => {
 
     const [isCollapsed, setIsCollapsed] = useState(true);
 
-    const changePultCollapseHandler = (state) => {
-        setIsCollapsed(state);
-    };
+    const changePultCollapseHandler = (state) => setIsCollapsed(state);
 
     return (
         <React.Fragment>
             <div className={`${styles.expanded} ${(!isCollapsed) ? styles.collapsed : ""}`}>
-                <Burger collapseState={changePultCollapseHandler} state={isCollapsed}/>
-                <User />
+                <Burger collapseState={changePultCollapseHandler}/>
+                <User isCollapsed={isCollapsed} />
                 <div>ProjectControl</div>
             </div>
         </React.Fragment>

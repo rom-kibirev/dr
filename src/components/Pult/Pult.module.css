@@ -4,6 +4,8 @@
 }
 
 .collapsed {
-    @apply -left-56
+    @apply
+    /*-left-1*/
+    -left-56
     transition-all duration-500
 }

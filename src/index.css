@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Nunito';
+    src: local('Nunito'), url(./components/UI/fonts/Nunito-Regular.ttf) format('woff');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

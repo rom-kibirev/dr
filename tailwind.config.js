@@ -2,6 +2,9 @@
 module.exports = {
   content: [],
   theme: {
+    fontFamily: {
+      'body': ['Nunito'],
+    },
     colors: {
       "darkBlue": "#192341",
       "softDarkBlue": "#374155",

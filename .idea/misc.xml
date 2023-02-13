@@ -3,4 +3,7 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="FLOW" />
   </component>
+  <component name="TailwindSettings">
+    <option name="mainCssPath" value="D:\develope\acs_templates\dr\tailwind.config.js" />
+  </component>
 </project>

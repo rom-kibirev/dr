@@ -1,15 +1,37 @@
 .navigation {
-    @apply border-b border-softDarkBlue
+    @apply border-b border-softDarkBlue pb-3
+    transition-all duration-500
+}
+.navigation-collapsed {
+    @apply pb-10
 }
 .current-user {
-    @apply grid grid-cols-2 px-3 mb-5
+    @apply mb-5 px-3
+    transition-all duration-500
 }
 .current-user label {
-    @apply my-auto
+    @apply text-xl
+    transition-all duration-500
 }
 .current-user button {
-    @apply w-10 h-10 my-auto place-self-end
+    @apply block text-base bg-white text-darkBlue px-2 py-0.5 my-1 cursor-pointer rounded w-full
+    transition-all duration-500
 }
-.current-user svg {
-    @apply fill-white
+.current-user button:hover,
+.current-user button:active {
+    @apply bg-softDarkBlue text-white
+}
+.current-user-collapsed {
+    @apply px-0 mb-2
+    transition-all duration-500
+}
+.current-user-collapsed label {
+    @apply hidden
+}
+.current-user-collapsed svg {
+    @apply fill-white w-12 h-12 absolute right-2 p-2 rounded-xl
+}
+.current-user-collapsed svg:hover,
+.current-user-collapsed svg:active {
+    @apply bg-softDarkBlue text-white
 }

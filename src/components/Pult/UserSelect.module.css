@@ -1,15 +1,26 @@
-.item-title {
-    @apply px-3 text-lg mt-3
+.user-select {
+    @apply px-4
+    transition-all duration-500
 }
-.item {
-    @apply px-3 flex flex-row mb-3
+.user-select label {
+    @apply text-lg mt-3 scale-x-100 inline-block
 }
-.item select {
+.user-select select {
     @apply bg-softDarkBlue px-2 py-1 rounded-md w-full
 }
-.item svg {
-    @apply w-8 h-8 my-auto mr-2 stroke-white
+.user-select svg {
+    @apply w-8 h-8 inline-block mr-3
 }
-.item img {
-    @apply w-8 h-8 my-auto mr-2 stroke-white text-white
+
+.user-select-collapsed {
+    @apply px-2 grid justify-items-end h-10
+}
+.user-select-collapsed label {
+    @apply scale-x-0
+}
+.user-select-collapsed select {
+    @apply bg-softDarkBlue w-5 h-8
+}
+.user-select-collapsed svg {
+    @apply w-6 h-6 absolute right-5 mt-11
 }
